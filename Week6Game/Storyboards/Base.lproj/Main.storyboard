@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Player Name View Controller-->
         <scene sceneID="a6e-g9-lAe">
             <objects>
-                <viewController id="Cae-d1-Mdy" sceneMemberID="viewController">
+                <viewController id="Cae-d1-Mdy" customClass="PlayerNameViewController" customModule="Week6Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FaB-s1-3iM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,11 +29,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(p1name)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-AC-Dzg">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-AC-Dzg">
                                                 <rect key="frame" x="106" y="0.0" width="239" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="playerOneTextField:" destination="r8u-NA-tpo" eventType="editingDidEnd" id="5jE-2b-Pje"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -46,11 +49,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(p2name)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml5-D7-zZu">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml5-D7-zZu">
                                                 <rect key="frame" x="105.5" y="0.0" width="239.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="playerTwoTextField:" destination="r8u-NA-tpo" eventType="editingDidEnd" id="OOb-ZL-rej"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -63,7 +69,9 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vQH-U3-yey" kind="show" id="Jxk-uz-lot"/>
+                                    <action selector="playButtonHasBeenTapped:" destination="r8u-NA-tpo" eventType="touchUpInside" id="tzl-Lv-dQq"/>
+                                    <action selector="tappedPlayButton:" destination="Cae-d1-Mdy" eventType="touchUpInside" id="KQG-0B-br6"/>
+                                    <segue destination="vQH-U3-yey" kind="show" identifier="" id="Jxk-uz-lot"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,47 +88,66 @@
                         <viewLayoutGuide key="safeArea" id="1Og-Fd-nKd"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZYq-RQ-G4o"/>
+                    <connections>
+                        <outlet property="playerOneTextField" destination="HvJ-AC-Dzg" id="P2m-RD-5be"/>
+                        <outlet property="playerTwoTextField" destination="Ml5-D7-zZu" id="5Aj-Hr-iJ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kji-Oi-mA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="r8u-NA-tpo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="224.80000000000001" y="-17.541229385307346"/>
         </scene>
-        <!--View Controller-->
+        <!--Tic Tac Toe View Controller-->
         <scene sceneID="lYT-iF-zzE">
             <objects>
-                <viewController id="vQH-U3-yey" sceneMemberID="viewController">
+                <viewController id="vQH-U3-yey" customClass="TicTacToeViewController" customModule="Week6Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzQ-9s-AoL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Week6GameOutline" translatesAutoresizingMaskIntoConstraints="NO" id="lpk-Iq-8Ck">
-                                <rect key="frame" x="47" y="193" width="280" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Week6GameOutline" translatesAutoresizingMaskIntoConstraints="NO" id="lpk-Iq-8Ck">
+                                <rect key="frame" x="48" y="194" width="279" height="279"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lpk-Iq-8Ck" secondAttribute="height" multiplier="1:1" id="12j-Cg-eLq"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cJK-h4-nPk">
-                                <rect key="frame" x="62" y="203" width="250" height="270"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cJK-h4-nPk">
+                                <rect key="frame" x="62.5" y="203" width="250" height="270"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-Oh-NZK">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="270"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEJ-TE-0RW">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="a1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="1Y8-PV-XUt"/>
                                                     <constraint firstAttribute="height" constant="80" id="eLJ-qY-q0o"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="a1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="5Lt-QF-3s1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmd-kN-ndF">
                                                 <rect key="frame" x="0.0" y="85" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="b1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="so4-5U-qud"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="b1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="xEa-pc-OOH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-Vu-FeH">
                                                 <rect key="frame" x="0.0" y="180" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="c1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="fAo-JM-kfD"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="c1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="vZr-JW-hXt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -129,22 +156,34 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O06-iF-m6y">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="a2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="SjL-ys-atE"/>
                                                     <constraint firstAttribute="width" constant="80" id="k0e-Gc-g0e"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="a2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="fF2-la-tHK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAA-r0-WGY">
                                                 <rect key="frame" x="0.0" y="85" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="b2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="tfv-ic-66s"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="b2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="lmc-e9-LtA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nP-rd-haU">
                                                 <rect key="frame" x="0.0" y="180" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="c2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="HOy-aw-R76"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="c2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="Jep-KO-8Ed"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -153,35 +192,52 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-UB-02c">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="a3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Pkf-ay-Bfo"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="mLi-z2-4vy"/>
                                                     <constraint firstAttribute="width" constant="80" id="zff-rS-Pdo"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="a3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="fCO-CT-E18"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fP-0q-ZEZ">
                                                 <rect key="frame" x="0.0" y="85" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="b3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="3sf-Sx-Y98"/>
                                                     <constraint firstAttribute="height" constant="90" id="lEN-5Y-kVX"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="b3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="r7Q-kh-ylg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xe-l9-93z">
                                                 <rect key="frame" x="0.0" y="180" width="80" height="90"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="c3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="XXE-i7-Byn"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="c3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="oOA-EY-2Aq"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QTD-ir-QO4" secondAttribute="height" multiplier="8:27" id="Cd0-hS-PYJ"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8xA-cX-o06" firstAttribute="trailing" secondItem="cJK-h4-nPk" secondAttribute="trailing" constant="48" id="1Fe-xY-0MH"/>
-                            <constraint firstItem="cJK-h4-nPk" firstAttribute="leading" secondItem="8xA-cX-o06" secondAttribute="leading" constant="47" id="HKh-FH-xoN"/>
+                            <constraint firstItem="cJK-h4-nPk" firstAttribute="centerX" secondItem="lpk-Iq-8Ck" secondAttribute="centerX" id="6Ft-PI-nxM"/>
+                            <constraint firstItem="cJK-h4-nPk" firstAttribute="bottom" secondItem="lpk-Iq-8Ck" secondAttribute="bottom" id="SWT-kq-r3t"/>
                             <constraint firstItem="8xA-cX-o06" firstAttribute="bottom" secondItem="cJK-h4-nPk" secondAttribute="bottom" constant="194" id="Ubd-Dl-KCb"/>
+                            <constraint firstItem="lpk-Iq-8Ck" firstAttribute="centerY" secondItem="VzQ-9s-AoL" secondAttribute="centerY" id="cjV-eZ-8s1"/>
+                            <constraint firstItem="cJK-h4-nPk" firstAttribute="centerX" secondItem="VzQ-9s-AoL" secondAttribute="centerX" id="fg5-h8-zgt"/>
+                            <constraint firstItem="lpk-Iq-8Ck" firstAttribute="centerX" secondItem="VzQ-9s-AoL" secondAttribute="centerX" id="tVw-t6-a7W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xA-cX-o06"/>
                     </view>
@@ -210,6 +266,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Week6GameOutline" width="170" height="170"/>
+        <image name="Week6GameOutline" width="512" height="512"/>
     </resources>
 </document>
