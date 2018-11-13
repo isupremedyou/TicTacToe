@@ -12,6 +12,8 @@
 		A6315C86219B3E7500D39523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6315C84219B3E7500D39523 /* Main.storyboard */; };
 		A6315C88219B3E7600D39523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6315C87219B3E7600D39523 /* Assets.xcassets */; };
 		A6315C8B219B3E7600D39523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6315C89219B3E7600D39523 /* LaunchScreen.storyboard */; };
+		A6315C99219B6E6700D39523 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C98219B6E6700D39523 /* TicTacToe.swift */; };
+		A6315C9B219B6ED600D39523 /* TicTacToeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6315C9A219B6ED600D39523 /* TicTacToeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A6315C87219B3E7600D39523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6315C8A219B3E7600D39523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6315C8C219B3E7600D39523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6315C98219B6E6700D39523 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
+		A6315C9A219B6ED600D39523 /* TicTacToeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		A6315C93219B5CE000D39523 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6315C98219B6E6700D39523 /* TicTacToe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 		A6315C94219B5CE400D39523 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6315C9A219B6ED600D39523 /* TicTacToeController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -184,7 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6315C9B219B6ED600D39523 /* TicTacToeController.swift in Sources */,
 				A6315C83219B3E7500D39523 /* ViewController.swift in Sources */,
+				A6315C99219B6E6700D39523 /* TicTacToe.swift in Sources */,
 				A6315C81219B3E7500D39523 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
