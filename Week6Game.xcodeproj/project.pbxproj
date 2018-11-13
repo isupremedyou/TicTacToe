@@ -54,12 +54,6 @@
 		A6315C7F219B3E7400D39523 /* Week6Game */ = {
 			isa = PBXGroup;
 			children = (
-				A6315C97219B5CFA00D39523 /* Resources */,
-				A6315C96219B5CF400D39523 /* Views */,
-				A6315C95219B5CED00D39523 /* ViewControllers */,
-				A6315C94219B5CE400D39523 /* ModelControllers */,
-				A6315C93219B5CE000D39523 /* Models */,
-				A6315C92219B5CD900D39523 /* Storyboards */,
 				A6315C80219B3E7500D39523 /* AppDelegate.swift */,
 				A6315C82219B3E7500D39523 /* ViewController.swift */,
 				A6315C84219B3E7500D39523 /* Main.storyboard */,
@@ -68,49 +62,6 @@
 				A6315C8C219B3E7600D39523 /* Info.plist */,
 			);
 			path = Week6Game;
-			sourceTree = "<group>";
-		};
-		A6315C92219B5CD900D39523 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		A6315C93219B5CE000D39523 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A6315C94219B5CE400D39523 /* ModelControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ModelControllers;
-			sourceTree = "<group>";
-		};
-		A6315C95219B5CED00D39523 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		A6315C96219B5CF400D39523 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A6315C97219B5CFA00D39523 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = S;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
