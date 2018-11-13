@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Week6GameX.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Week6GameX.jpg",
       "scale" : "2x"
     },
     {
