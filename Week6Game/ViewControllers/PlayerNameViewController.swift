@@ -25,7 +25,9 @@ class PlayerNameViewController: UIViewController {
             let playerTwoName = playerTwoTextField.text
             else {return}
         
-        TicTacToeController.shared.setPlayerNamesWith(playerXName: playerOneName, playerOName: playerTwoName)
+        if !playerOneName.isEmpty, !playerTwoName.isEmpty {
+            TicTacToeController.shared.setPlayerNamesWith(playerXName: playerOneName, playerOName: playerTwoName)
+        }
     }
     
 

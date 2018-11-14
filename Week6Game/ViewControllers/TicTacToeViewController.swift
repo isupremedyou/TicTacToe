@@ -11,53 +11,54 @@ import UIKit
 class TicTacToeViewController: UIViewController {
     
     
+    // MARK: - Properties
+    
+    var tappedSquares = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        TicTacToeController.shared.resetGame()
+    }
+    
     @IBAction func a1ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func b1ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
-        
     }
     @IBAction func c1ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func a2ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func b2ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func c2ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func a3ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func b3ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     @IBAction func c3ButtonWasTapped(_ sender: UIButton!) {
         updateSquare(sender: sender)
-        print("\(sender.accessibilityIdentifier)")
     }
     
     func updateSquare(sender: Any){
         let button = sender as! UIButton
         button.isEnabled = false
+        tappedSquares.append(button)
         
         if TicTacToeController.shared.isPlayerXTurn {
             button.setBackgroundImage(UIImage(named: "Week6GameX"), for: .disabled)
@@ -70,37 +71,40 @@ class TicTacToeViewController: UIViewController {
         let gameOutcome = TicTacToeController.shared.turnTaken(atPoint: TicTacToe.Point(rawValue: point)!)
         
         if gameOutcome == .win {
-            presentAlertController()
-            print("win")
+            presentWinAlertController()
         } else if gameOutcome == .draw {
-            print("draw")
-        } else if gameOutcome == .keepPlaying {
-            print("keep playing")
+            presentDrawAlertController()
         }
     }
     
-    func presentAlertController() {
+    func presentWinAlertController() {
         
-        //create a constant for the winners name
+        guard let winnerName = TicTacToeController.shared.winningPlayer.name else { return }
         
-        let alert = UIAlertController(title: "Winner!!!", message: "[player] won!", preferredStyle: .alert)
+        let winAlertController = UIAlertController(title: "Winner!!!", message: "\(winnerName) won!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Play Again!", style: .default) { (_) in
             TicTacToeController.shared.resetGame()
-            self.navigationController?.popViewController(animated: true)
-            print("game reset")
+            self.resetBoard()
         }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        winAlertController.addAction(action)
+        present(winAlertController, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func presentDrawAlertController() {
+        
+        let drawAlertController = UIAlertController(title: "Draw!", message: "No winner this time! Play again!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Play Again!", style: .default) { (_) in
+            TicTacToeController.shared.resetGame()
+            self.resetBoard()
+        }
+        drawAlertController.addAction(action)
+        present(drawAlertController, animated: true, completion: nil)
     }
-    */
-
+    
+    func resetBoard() {
+        
+        tappedSquares.compactMap({$0.isEnabled = true})
+        
+        tappedSquares = [UIButton]()
+    }
 }
