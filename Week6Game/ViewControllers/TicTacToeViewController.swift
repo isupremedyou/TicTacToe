@@ -27,39 +27,26 @@ class TicTacToeViewController: UIViewController {
         TicTacToeController.shared.resetGame()
     }
     
-    @IBAction func a1ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func b1ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func c1ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func a2ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func b2ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func c2ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func a3ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func b3ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
-    }
-    @IBAction func c3ButtonWasTapped(_ sender: UIButton!) {
-        updateSquare(sender: sender)
+    // MARK: - Actions
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        
+        resetBoard()
     }
     
-    func updateSquare(sender: Any){
-        let button = sender as! UIButton
+    @IBAction func squareButtonTapped(_ sender: UIButton!) {
+        updateSquare(button: sender)
+    }
+    
+    func updateSquare(button: UIButton){
+        
+        // Update the state of the button to disabled to prevent further actions
         button.isEnabled = false
+        
+        // Adds the button to an array of tappedSquares which will be used to reset the board latter
         tappedSquares.append(button)
         
+        // Updates the image displayed depending on the status of the button
         if TicTacToeController.shared.isPlayerXTurn {
             button.setBackgroundImage(UIImage(named: "Week6GameX"), for: .disabled)
         } else {
@@ -94,7 +81,6 @@ class TicTacToeViewController: UIViewController {
         
         let drawAlertController = UIAlertController(title: "Draw!", message: "No winner this time! Play again!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Play Again!", style: .default) { (_) in
-            TicTacToeController.shared.resetGame()
             self.resetBoard()
         }
         drawAlertController.addAction(action)
@@ -103,8 +89,8 @@ class TicTacToeViewController: UIViewController {
     
     func resetBoard() {
         
-        tappedSquares.compactMap({$0.isEnabled = true})
-        
+        TicTacToeController.shared.resetGame()
+        tappedSquares.map({$0.isEnabled = true ; $0.setBackgroundImage(nil, for: .disabled)})
         tappedSquares = [UIButton]()
     }
 }

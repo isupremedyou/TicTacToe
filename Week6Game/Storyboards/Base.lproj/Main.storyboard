@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31p-z8-wCm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cae-d1-Mdy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="zth-CM-1lN">
-                                <rect key="frame" x="15" y="222.5" width="345" height="138"/>
+                                <rect key="frame" x="15" y="174.5" width="345" height="138"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ol7-oK-RZB">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
@@ -26,11 +26,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player One:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz1-vq-6A4">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-AC-Dzg">
                                                 <rect key="frame" x="106" y="0.0" width="239" height="30"/>
+                                                <color key="backgroundColor" red="0.92124956849999995" green="0.92194885019999995" blue="0.92135781049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -46,11 +47,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Two:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N30-YO-aag">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml5-D7-zZu">
                                                 <rect key="frame" x="105.5" y="0.0" width="239.5" height="30"/>
+                                                <color key="backgroundColor" red="0.92124956849999995" green="0.92194885019999995" blue="0.92135781049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -60,22 +62,23 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I13-0U-WJn">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I13-0U-WJn">
                                         <rect key="frame" x="0.0" y="102" width="345" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Play">
                                             <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="playButtonHasBeenTapped:" destination="r8u-NA-tpo" eventType="touchUpInside" id="tzl-Lv-dQq"/>
                                             <action selector="tappedPlayButton:" destination="Cae-d1-Mdy" eventType="touchUpInside" id="KQG-0B-br6"/>
-                                            <segue destination="vQH-U3-yey" kind="show" identifier="" id="Jxk-uz-lot"/>
+                                            <segue destination="vQH-U3-yey" kind="showDetail" identifier="" id="Jxk-uz-lot"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1Og-Fd-nKd" firstAttribute="trailing" secondItem="zth-CM-1lN" secondAttribute="trailing" constant="15" id="QVu-JG-2wX"/>
                             <constraint firstItem="zth-CM-1lN" firstAttribute="centerY" secondItem="1Og-Fd-nKd" secondAttribute="centerY" constant="-100" id="aWC-1G-JLw"/>
@@ -118,21 +121,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="a1"/>
                                                 <connections>
-                                                    <action selector="a1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="5Lt-QF-3s1"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="5Lt-QF-3s1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmd-kN-ndF">
                                                 <rect key="frame" x="0.0" y="126.5" width="121.5" height="122"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="b1"/>
                                                 <connections>
-                                                    <action selector="b1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="xEa-pc-OOH"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="3Q2-VE-Sol"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-Vu-FeH">
                                                 <rect key="frame" x="0.0" y="253.5" width="121.5" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="c1"/>
                                                 <connections>
-                                                    <action selector="c1ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="vZr-JW-hXt"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="5fa-8H-q7i"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -144,21 +147,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="a2"/>
                                                 <connections>
-                                                    <action selector="a2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="fF2-la-tHK"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="x48-Li-Hzl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAA-r0-WGY">
                                                 <rect key="frame" x="0.0" y="126.5" width="122" height="122"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="b2"/>
                                                 <connections>
-                                                    <action selector="b2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="lmc-e9-LtA"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="Eqn-Ql-MpG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nP-rd-haU">
                                                 <rect key="frame" x="0.0" y="253.5" width="122" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="c2"/>
                                                 <connections>
-                                                    <action selector="c2ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="Jep-KO-8Ed"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="EPV-DK-AKa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -170,30 +173,40 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="a3"/>
                                                 <connections>
-                                                    <action selector="a3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="fCO-CT-E18"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="Agg-Bc-gdk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fP-0q-ZEZ">
                                                 <rect key="frame" x="0.0" y="126.5" width="121.5" height="122"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="b3"/>
                                                 <connections>
-                                                    <action selector="b3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="r7Q-kh-ylg"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="XbH-7y-KjN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xe-l9-93z">
                                                 <rect key="frame" x="0.0" y="253.5" width="121.5" height="121.5"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="c3"/>
                                                 <connections>
-                                                    <action selector="c3ButtonWasTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="oOA-EY-2Aq"/>
+                                                    <action selector="squareButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="1e9-Ee-9Vn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-1p-IDg">
+                                <rect key="frame" x="157.5" y="541" width="60" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="vQH-U3-yey" eventType="touchUpInside" id="fqd-r2-ncv"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.78944544497796465" green="0.85239806047773237" blue="0.92297381160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="qbd-1p-IDg" firstAttribute="centerX" secondItem="VzQ-9s-AoL" secondAttribute="centerX" id="2ay-vw-iHy"/>
                             <constraint firstItem="cJK-h4-nPk" firstAttribute="top" secondItem="lpk-Iq-8Ck" secondAttribute="top" id="C0b-Nv-xqD"/>
                             <constraint firstItem="cJK-h4-nPk" firstAttribute="height" secondItem="lpk-Iq-8Ck" secondAttribute="height" id="COO-QZ-l0n"/>
                             <constraint firstItem="cJK-h4-nPk" firstAttribute="leading" secondItem="lpk-Iq-8Ck" secondAttribute="leading" id="RjK-MV-4MF"/>
@@ -201,6 +214,7 @@
                             <constraint firstItem="lpk-Iq-8Ck" firstAttribute="leading" secondItem="8xA-cX-o06" secondAttribute="leading" id="WvM-0v-wSg"/>
                             <constraint firstItem="lpk-Iq-8Ck" firstAttribute="centerY" secondItem="VzQ-9s-AoL" secondAttribute="centerY" id="cjV-eZ-8s1"/>
                             <constraint firstItem="8xA-cX-o06" firstAttribute="trailing" secondItem="lpk-Iq-8Ck" secondAttribute="trailing" id="wCr-Bb-YOq"/>
+                            <constraint firstItem="qbd-1p-IDg" firstAttribute="top" secondItem="lpk-Iq-8Ck" secondAttribute="bottom" constant="20" id="yl5-Gc-313"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xA-cX-o06"/>
                     </view>
@@ -208,24 +222,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZf-Rr-F4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="-18.440779610194905"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ngc-zS-6HZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="31p-z8-wCm" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CLa-Yc-9gj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Cae-d1-Mdy" kind="relationship" relationship="rootViewController" id="zvj-VL-fHu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aRm-bj-gl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-567.20000000000005" y="-16.641679160419791"/>
         </scene>
     </scenes>
     <resources>
