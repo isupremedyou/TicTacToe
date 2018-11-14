@@ -15,8 +15,15 @@ class TicTacToeController {
     private init() {}
     
     // Shared truth
-    var playerX = Player(name: "Player X")
-    var playerO = Player(name: "Player O")
+    var playerX = Player(name: "X's")
+    var playerO = Player(name: "O's")
+    var winningPlayer: Player {
+        if isPlayerXTurn {
+            return playerO
+        } else {
+            return playerX
+        }
+    }
     var isPlayerXTurn = true
     var turnNumber = 0
     
@@ -28,23 +35,22 @@ class TicTacToeController {
     
     func turnTaken(atPoint point: TicTacToe.Point) -> TicTacToe.GameOutcome {
 
+        turnNumber += 1
         
         if isPlayerXTurn {
             
-            isPlayerXTurn = false
+            isPlayerXTurn = !isPlayerXTurn
             playerX.points.append(point)
             return checkGameResult(currentPlayersPoints: playerX.points)
         } else {
             
-            isPlayerXTurn = true
+            isPlayerXTurn = !isPlayerXTurn
             playerO.points.append(point)
             return checkGameResult(currentPlayersPoints: playerO.points)
         }
     }
     
     func checkGameResult(currentPlayersPoints points: [TicTacToe.Point]) -> TicTacToe.GameOutcome {
-        
-        turnNumber += 1
         
         switch true {
         case points.contains(.a1) && points.contains(.a2) && points.contains(.a3):
@@ -64,7 +70,7 @@ class TicTacToeController {
         case points.contains(.a3) && points.contains(.b2) && points.contains(.c1):
             return .win
         default:
-            if turnNumber != 8 {
+            if turnNumber != 9 {
                 return .keepPlaying
             } else {
                 return .draw
