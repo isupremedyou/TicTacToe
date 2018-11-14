@@ -81,8 +81,8 @@ class TicTacToeController {
     
     func resetGame() {
         
-        playerX = Player(name: "Player X")
-        playerO = Player(name: "Player O")
+        playerX = Player(name: "X's")
+        playerO = Player(name: "O's")
         isPlayerXTurn = true
         turnNumber = 0
     }
