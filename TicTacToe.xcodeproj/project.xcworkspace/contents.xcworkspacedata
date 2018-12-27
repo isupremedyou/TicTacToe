@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Week6Game.xcodeproj">
+      location = "self:/Users/travischapman/Development/DevMountain/Unit 6/TicTacToe/TicTacToe.xcodeproj">
    </FileRef>
 </Workspace>
