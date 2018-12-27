@@ -1,6 +1,6 @@
 //
 //  TicTacToeController.swift
-//  Week6Game
+//  TicTacToe
 //
 //  Created by Travis Chapman on 11/13/18.
 //  Copyright © 2018 Travis Chapman. All rights reserved.
@@ -15,8 +15,8 @@ class TicTacToeController {
     private init() {}
     
     // Shared truth
-    var playerX = Player(name: "X's")
-    var playerO = Player(name: "O's")
+    var playerX = Player(name: "X")
+    var playerO = Player(name: "O")
     var winningPlayer: Player {
         if isPlayerXTurn {
             return playerO
@@ -81,8 +81,8 @@ class TicTacToeController {
     
     func resetGame() {
         
-        playerX = Player(name: "X's")
-        playerO = Player(name: "O's")
+        playerX.points = []
+        playerO.points = []
         isPlayerXTurn = true
         turnNumber = 0
     }
