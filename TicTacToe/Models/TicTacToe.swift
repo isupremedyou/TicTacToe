@@ -11,11 +11,11 @@ import Foundation
 class TicTacToe {
     
     /// Coordinates to the TicTacToe Gameboard Spaces where the letter refers to the Y-axis and the number refers to the X-axis
-    enum Point: String {
+    enum Point: Int {
         case a1, a2, a3, b1, b2, b3, c1, c2, c3
     }
     
-    enum GameOutcome: String {
+    enum GameOutcome: Int {
         case win, draw, keepPlaying
     }
 }
