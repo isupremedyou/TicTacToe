@@ -94,6 +94,17 @@ class TicTacToeViewController: UIViewController {
         }
     }
     
+    fileprivate func highlightWinningSequence() {
+        
+        let winningSequence = TicTacToeController.shared.winningSequence
+        
+        for square in tappedSquares {
+            if winningSequence.contains(TicTacToe.Point(rawValue: square.tag)!) {
+                square.tintColor = UIColor.black
+            }
+        }
+    }
+    
     func updateSquare(button: UIButton) {
         
         // Update the state of the button to disabled to prevent further actions
@@ -109,12 +120,13 @@ class TicTacToeViewController: UIViewController {
             button.setBackgroundImage(UIImage(named: "O"), for: .disabled)
         }
         
-        guard let point = button.accessibilityIdentifier else { return }
+        let point = button.tag
 
         let gameOutcome = TicTacToeController.shared.turnTaken(atPoint: TicTacToe.Point(rawValue: point)!)
         
         if gameOutcome == .win {
-            guard let winnerName = TicTacToeController.shared.winningPlayer.name else { return }
+            guard let winnerName = TicTacToeController.shared.winningPlayer?.name else { return }
+            highlightWinningSequence()
             updateTurnLabel(withText: "\(winnerName) wins!")
             allSquares.map({$0.isEnabled = false})
             return
@@ -133,7 +145,7 @@ class TicTacToeViewController: UIViewController {
         
         updateTurnLabel(withText: nil)
         
-        allSquares.map({$0.isEnabled = true ; $0.setBackgroundImage(nil, for: .disabled)})
+        allSquares.map({$0.isEnabled = true ; $0.tintColor = UIColor.white ; $0.setBackgroundImage(nil, for: .disabled)})
         tappedSquares = []
     }
 }
