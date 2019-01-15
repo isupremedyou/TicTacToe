@@ -29,13 +29,6 @@ The code is organized thusly:
  - Storyboards
 	 - [Main.storyboard](https://github.com/travischapman/TicTacToe/blob/master/TicTacToe/Storyboards/Base.lproj/Main.storyboard)
 
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
 ## Other Authors
 
 * *Bailey McDaris* - [baileylynncodes](https://github.com/baileylynncodes)
